@@ -111,3 +111,5 @@ http://<EC2-public-ip>:8080
 - **Teardown**: deregister the runner (`./config.sh remove`), terminate EC2,
   delete the ECR repo and IAM user.
 ```
+
+<!-- ci: trigger run -->
