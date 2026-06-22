@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; margin: 0; padding: 40px; }
+        .card { max-width: 480px; margin: 80px auto; background: #fff; padding: 40px;
+                border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #722f37; }
+        .score { font-size: 48px; font-weight: bold; color: #2e7d32; margin: 20px 0; }
+        a { display: inline-block; margin-top: 20px; color: #722f37; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Predicted Wine Quality</h1>
+        <div class="score">{{ prediction }}</div>
+        <a href="/">&larr; Predict another</a>
+    </div>
+</body>
+</html>

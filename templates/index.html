@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; margin: 0; padding: 40px; }
+        .card { max-width: 720px; margin: 0 auto; background: #fff; padding: 30px;
+                border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #722f37; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        label { display: block; font-size: 14px; color: #333; margin-bottom: 4px; }
+        input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; margin-top: 24px; padding: 12px; background: #722f37; color: #fff;
+                 border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #5a242b; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🍷 Wine Quality Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="grid">
+                <div><label>Fixed Acidity</label><input type="number" step="any" name="fixed acidity" required></div>
+                <div><label>Volatile Acidity</label><input type="number" step="any" name="volatile acidity" required></div>
+                <div><label>Citric Acid</label><input type="number" step="any" name="citric acid" required></div>
+                <div><label>Residual Sugar</label><input type="number" step="any" name="residual sugar" required></div>
+                <div><label>Chlorides</label><input type="number" step="any" name="chlorides" required></div>
+                <div><label>Free Sulfur Dioxide</label><input type="number" step="any" name="free sulfur dioxide" required></div>
+                <div><label>Total Sulfur Dioxide</label><input type="number" step="any" name="total sulfur dioxide" required></div>
+                <div><label>Density</label><input type="number" step="any" name="density" required></div>
+                <div><label>pH</label><input type="number" step="any" name="pH" required></div>
+                <div><label>Sulphates</label><input type="number" step="any" name="sulphates" required></div>
+                <div><label>Alcohol</label><input type="number" step="any" name="alcohol" required></div>
+            </div>
+            <button type="submit">Predict Quality</button>
+        </form>
+    </div>
+</body>
+</html>

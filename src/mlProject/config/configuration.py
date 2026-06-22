@@ -1,4 +1,4 @@
-from logging import config
+import os
 
 from mlProject.constants import *
 from mlProject.utils.common import read_yaml, create_directories
@@ -7,6 +7,7 @@ from mlProject.entity.config_entity import (
     DataTransformationConfig,
     DataValidationConfig,
     ModelTrainerConfig,
+    ModelEvaluationConfig,
 )
 
 
@@ -80,4 +81,21 @@ class ConfigurationManager:
             alpha=params.alpha,
             l1_ratio=params.l1_ratio,
             target_column=schema.name,
+        )
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        return ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            all_params=params,
+            metric_file_name=config.metric_file_name,
+            target_column=schema.name,
+            mlflow_uri=os.environ["MLFLOW_TRACKING_URI"],
         )
